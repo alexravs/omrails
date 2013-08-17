@@ -1,11 +1,16 @@
-<div class= "hero-unit">
-<h1>Welcome to One Month Rails!</h1>
-<p>
-	You've found the home page for the 
-	<%= link_to "One Month Rails", "http://onemonthrails.com" %> application.
-</p>
-<p>
-	<%= link_to "Sign Up Now!", "#", class: "btn btn-primary" %>
-</p>
-</div>
+<% if user_signed_in? %>
+	<h1>You're logged in!</h1>
+<% else %>
+
+	<div class= "hero-unit">
+		<h1 style="text-align:center">One Month Rails</h1>
+		<p style="text-align:center">
+			You just found the  
+			<%= link_to "One Month Rails", "http://www.onemonthrails.com" %> Application.
+		</p>
+		<p style="text-align:center">
+			<%= link_to "Sign Up Now!", new_user_registration_path, class: "btn btn-primary btn-large" %>
+		</p>
+	</div>
+<% end %>
 
